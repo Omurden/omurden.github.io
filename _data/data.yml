@@ -34,8 +34,8 @@ projects:
     intro: >
       Here are platforms that i joined. 
     assignments:
-      - title: See my photos @ [Unsplash](unsplash.com/@omurden/)
-        tagline: "I love photography"
+      - title: See my photos @ [Unsplash](https://unsplash.com/@omurden/)
+        tagline: "I love photography [Unsplash](https://unsplash.com/@omurden/)"
 
       - title: DevStudio
         link: "#"
