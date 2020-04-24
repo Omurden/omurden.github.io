@@ -23,7 +23,7 @@ sidebar:
     goodreads: 39338388-m-rden-cengiz # Number-Username, e.g. 123456-alandoe
 
 career-profile:
-    title: About Me 
+    title: About me 
     summary: |
       Summarise your career here lorem ipsum dolor sit amet, consectetuer
       adipiscing elit. You can [download this free resume/CV template here]().
@@ -33,7 +33,7 @@ career-profile:
       Second paragraph if required.
 
 projects:
-    title: Projects
+    title: What am i doing 
     intro: >
       You can list your side projects or open source libraries in this
       section. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
