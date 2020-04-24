@@ -8,7 +8,7 @@ sidebar:
 
     # Profile information
     name: Omurden Cengiz
-    tagline: quality assurance / disk jockey 
+    tagline: QA / DJ 
     avatar: profile.png  #place a 100x100 picture inside /assets/images/ folder and provide the name of the file below
 
     # Sidebar links
@@ -26,23 +26,29 @@ career-profile:
     title: About me 
     summary: |
       * Living @ Istanbul 
-      * Quality Assurance @ www.hipolabs.com - Love to break things
-      * Dj @ Dendenevet - Love to play music
+      * Working as a QA Lead @ Hipo - Love to break things, testing mobile and web apps with both
+        manual and automated flows. Love Robot Framework. 
+      * Dj @ Dendenevet - Love to play music, currently playing nearly all weekends in night clubs.
+        You can find more info in Interests part. 
 
 projects:
-    title: Interests & Platforms
+    title: Interests
     intro: >
-      Here are platforms that i joined. 
+      Here are my interests and related links. 
     assignments:
       - title: Unsplash
         link: https://unsplash.com/@omurden/
         tagline: "I love photography"
 
-      - title: Personal Instagram page
+      - title: Instagram - Omurden
         link: "https://www.instagram.com/omurdenden/"
         tagline: "Photos from my daliy life"
+        
+      - title: Instagram - Dj Denden
+        link: "https://www.instagram.com/dendenevent/"
+        tagline: "Photos of my Dj life"
 
-      - title: Technical Blog
+      - title: Tech blog 
         link: "https://medium.com/@omurdenden/"
         tagline: "Some technical stuff"
 
