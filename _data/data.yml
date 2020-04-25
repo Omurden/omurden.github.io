@@ -1,7 +1,3 @@
-#
-# Be aware that even a small syntax error here can lead to failures in output.
-#
-
 sidebar:
     about: False # set to False or comment line if you want to remove the "how to use?" in the sidebar
     education: True # set to False if you want education in main section instead of in sidebar
@@ -17,19 +13,23 @@ sidebar:
     website: omurden.com #do not add http://
     linkedin: omurden
     github: omurden
-    bitbucket:
     twitter: '@omurdenden'
-    stack-overflow: # Number/Username, e.g. 123456/alandoe
     goodreads: 39338388-m-rden-cengiz # Number-Username, e.g. 123456-alandoe
 
 career-profile:
     title: About me 
     summary: |
       * Living @ Istanbul 
-      * Working as a QA Lead @ Hipo - Love to break things, testing mobile and web apps with both
-        manual and automated flows. Love Robot Framework. 
-      * Dj @ Dendenevet - Love to play music, currently playing nearly all weekends in night clubs.
-        You can find more info in Interests part. 
+      * Working as a QA Lead @ Hipo 
+        - Love to break things
+        - Testing mobile and web apps with both manual and automated flows.
+        - Love Robot Framework
+        - Founder of QAist Meetup group.
+        - Founder of Robot Framework Turkey Meetup group.
+      * Dj @ Dendenevet
+        - Love to play music, especially 90's. 
+        - Follow the upcoming events on Facebook page.
+        - Here is how we entertain, follow on Instagram  
 
 projects:
     title: Interests
@@ -51,10 +51,6 @@ projects:
       - title: Tech blog 
         link: "https://medium.com/@omurdenden/"
         tagline: "Some technical stuff"
-
-
-
-
 
 footer: >
     Designed with <i class="fas fa-heart"></i> by <a href="http://themes.3rdwavemedia.com" target="_blank" rel="nofollow">Xiaoying Riley</a>
