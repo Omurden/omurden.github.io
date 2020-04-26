@@ -20,16 +20,16 @@ career-profile:
     title: About me 
     summary: |
       * Living @ Istanbul 
-      * Working as a QA Lead @ [Hipo](http://hipolabs.com) 
-        - Love to break things
+      * Working as a QA Lead @ [Hipo](http://hipolabs.com){:target="_blank" rel="noopener"}.
+        - Love to break things.
         - Testing mobile and web apps with both manual and automated flows.
-        - Love Robot Framework
-        - Founder of QAist Meetup group.
-        - Founder of Robot Framework Turkey Meetup group.
-      * Dj @ Dendenevet
+        - Love Robot Framework.
+        - Founder of [QAist Meetup group](https://www.meetup.com/QAIstMeetup){:target="_blank" rel="noopener"}.
+        - Founder of [Robot Framework Turkey Meetup group](https://www.meetup.com/Robot-Framework-Turkey){:target="_blank" rel="noopener"}.
+      * Dj @ [Dendenevet](https://www.instagram.com/dendenevent){:target="_blank" rel="noopener"}.
         - Love to play music, especially 90's. 
-        - Follow the upcoming events on Facebook page.
-        - Here is how we entertain, follow on Instagram  
+        - Follow the upcoming events on [Facebook page](https://www.facebook.com/dendenevent/){:target="_blank" rel="noopener"}.
+        - Here is how we entertain, follow on [Instagram](https://www.instagram.com/dendenevent){:target="_blank" rel="noopener"}.
 
 projects:
     title: Interests
@@ -38,11 +38,11 @@ projects:
     assignments:
       - title: Unsplash
         link: https://unsplash.com/@omurden/
-        tagline: "I love photography"
+        tagline: "I love photography, here is shared photos with community for free use."
 
       - title: Instagram - Omurden
         link: "https://www.instagram.com/omurdenden/"
-        tagline: "Photos from my daliy life"
+        tagline: "Photos from my daily life."
         
       - title: Instagram - Dj Denden
         link: "https://www.instagram.com/dendenevent/"
@@ -50,7 +50,7 @@ projects:
 
       - title: Tech blog 
         link: "https://medium.com/@omurdenden/"
-        tagline: "Some technical stuff"
+        tagline: "Some technical and work life related stuff."
 
 footer: >
     Designed with <i class="fas fa-heart"></i> by <a href="http://themes.3rdwavemedia.com" target="_blank" rel="nofollow">Xiaoying Riley</a>
