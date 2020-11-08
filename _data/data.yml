@@ -9,7 +9,7 @@ sidebar:
 
     # Sidebar links
     email: omurdenden@gmail.com
-    phone: 00905358875261
+    phone: +31627740487
     website: omurden.com #do not add http://
     linkedin: omurden
     github: omurden
@@ -19,11 +19,9 @@ sidebar:
 career-profile:
     title: About me 
     summary: |
-      * Living @ Istanbul 
-      * Working as a QA Lead @ [Hipo](http://hipolabs.com){:target="_blank" rel="noopener"}.
+      * Living @ Amsterdam 
+      * Working as a QA @ [Catawiki](https://www.catawiki.com/){:target="_blank" rel="noopener"}.
         - Love to break things.
-        - Testing mobile and web apps with both manual and automated flows.
-        - Love Robot Framework.
         - Founder of [QAist Meetup group](https://www.meetup.com/QAIstMeetup){:target="_blank" rel="noopener"}.
         - Founder of [Robot Framework Turkey Meetup group](https://www.meetup.com/Robot-Framework-Turkey){:target="_blank" rel="noopener"}.
       * Dj @ [Dendenevet](https://www.instagram.com/dendenevent){:target="_blank" rel="noopener"}.
