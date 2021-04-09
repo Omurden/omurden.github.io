@@ -49,6 +49,14 @@ projects:
       - title: Tech blog 
         link: "https://medium.com/@omurdenden/"
         tagline: "Some technical and work life related stuff."
+        
+      - title: Tradingview Charts 
+        link: "https://www.tradingview.com/u/omurden/"
+        tagline: "Sharing some charting ideas about pairs, coins and futures."
+        
+      - title: MT4 Trading Bots
+        link: "https://www.mql5.com/en/users/silverrush/seller"
+        tagline: "I published some trading bots that buy/sell some pairs automatically. Let's download and try."
 
 footer: >
     Designed with <i class="fas fa-heart"></i> by <a href="http://themes.3rdwavemedia.com" target="_blank" rel="nofollow">Xiaoying Riley</a>
