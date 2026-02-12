@@ -1,65 +1,38 @@
-/* Extra small devices (phones, less than 768px) */
-@media (max-width: 767px) {
+/* ======= Responsive ======= */
 
-    body{
-        padding: 0;
-    }
+@media (max-width: 480px) {
+  .wrapper {
+    padding: 48px 16px 32px;
+  }
 
-    .sidebar-wrapper {
-        position: static;
-        width: inherit;
-    }
+  .profile-header {
+    padding-bottom: 32px;
+  }
 
-    .main-wrapper {
-        padding: 30px;
-    }
+  .profile-header .avatar {
+    width: 100px;
+    height: 100px;
+  }
 
-    .main-wrapper .time {
-        position: static;
-        display: block;
-        margin-top: 5px;
-    }
+  .profile-header .name {
+    font-size: 1.5rem;
+  }
 
-    .main-wrapper .upper-row {
-        margin-bottom: 0;
-    }
+  .social-links {
+    gap: 10px;
+  }
 
+  .social-links a {
+    width: 36px;
+    height: 36px;
+  }
 
-}
-/* Small devices (tablets, 768px and up) */
-@media (min-width: 768px) {
+  .section {
+    margin-bottom: 36px;
+    padding-top: 24px;
+  }
 
-
-}
-
-/* Medium devices (desktops, 992px and up) */
-@media (min-width: 992px) {
-
-    .skillset .level-title {
-        display: inline-block;
-        float: left;
-        width: 30%;
-        margin-bottom: 0;
-    }
-
-    .skillset .level-bar {
-        display: inline-block;
-        width: 70%;
-        float: left;
-        position: relative;
-        top: 1px;
-    }
-
-
-}
-
-/* Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-
-}
-
-
-/* Ex-Large devices (large desktops, 1200px and up) */
-@media (min-width: 1400px) {
-
+  .project-card {
+    padding: 12px 12px;
+  }
 }

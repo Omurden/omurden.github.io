@@ -1,39 +1,40 @@
-@media print
-   {
-    @page {
-        size: A4;
-    }
-    body {
-       font-size: 12pt;
-    }
+/* ======= Print ======= */
 
-    img.avatar {
-        filter: grayscale(1);
-        -webkit-filter: greyscale(1);
-    }
-   .main-wrapper .time {
-       float: right;
-        color: black !important;
-        -webkit-print-color-adjust: exact; 
-   }
-    .sidebar-wrapper {
-        position: static;
-        float: right;
-        width: 40%;
-        -webkit-print-color-adjust: exact; 
-    }
+@media print {
+  @page {
+    size: A4;
+    margin: 2cm;
+  }
 
-    .remove-container.container-block {
-       display: none;
-    }
+  body {
+    font-size: 12pt;
+    background: #fff;
+    color: #000;
+  }
 
-    footer {
-       display: none;
-    }
+  .wrapper {
+    max-width: 100%;
+    padding: 0;
+  }
 
-    .skillset .level-bar-inner {
-       background-color: black !important;
-       -webkit-print-color-adjust: exact; 
-    }
+  .social-links {
+    display: none;
+  }
 
+  .profile-header .avatar {
+    filter: grayscale(1);
+  }
+
+  .project-card:hover {
+    background-color: transparent;
+  }
+
+  a {
+    color: #000;
+    text-decoration: underline;
+  }
+
+  .footer {
+    display: none;
+  }
 }

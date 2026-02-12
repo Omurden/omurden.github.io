@@ -1,62 +1,58 @@
 sidebar:
-    about: False # set to False or comment line if you want to remove the "how to use?" in the sidebar
-    education: True # set to False if you want education in main section instead of in sidebar
+    about: False
+    education: False
 
     # Profile information
     name: Ömürden Cengiz
-    tagline: QA / DJ 
-    avatar: profile.png  #place a 100x100 picture inside /assets/images/ folder and provide the name of the file below
+    tagline: QA Engineer & DJ
+    avatar: profile.png
 
-    # Sidebar links
+    # Contact / social links
     email: omurdenden@gmail.com
-    phone: +31627740487
-    website: omurden.com #do not add http://
+    phone:
+    website: omurden.com
     linkedin: omurden
     github: omurden
     twitter: '@omurdenden'
-    goodreads: 39338388-m-rden-cengiz # Number-Username, e.g. 123456-alandoe
+    goodreads: 39338388-m-rden-cengiz
 
 career-profile:
-    title: About me 
+    title: About Me
     summary: |
-      * Living @ Amsterdam 
-      * Working as QA @ [Albert Heijn](https://www.ah.nl/){:target="_blank" rel="noopener"}.
-        - Love to break things.
-        - Founder of [QAist Meetup group](https://www.meetup.com/QAIstMeetup){:target="_blank" rel="noopener"}.
-        - Founder of [Robot Framework Turkey Meetup group](https://www.meetup.com/Robot-Framework-Turkey){:target="_blank" rel="noopener"}.
-      * Dj @ [Dendenevet](https://www.instagram.com/dendenevent){:target="_blank" rel="noopener"}.
-        - Love to play music, especially 90's. 
-        - Follow the upcoming events on [Facebook page](https://www.facebook.com/dendenevent/){:target="_blank" rel="noopener"}.
-        - Here is how we entertain, follow on [Instagram](https://www.instagram.com/dendenevent){:target="_blank" rel="noopener"}.
+      QA Engineer at [Albert Heijn](https://www.ah.nl/){:target="_blank" rel="noopener"} based in Amsterdam — I love breaking things so others don't have to. I founded the [QAist Meetup](https://www.meetup.com/QAIstMeetup){:target="_blank" rel="noopener"} and [Robot Framework Turkey](https://www.meetup.com/Robot-Framework-Turkey){:target="_blank" rel="noopener"} communities to bring testers together.
+
+      When I'm not testing, I'm DJ-ing as [Dendenevet](https://www.instagram.com/dendenevent){:target="_blank" rel="noopener"} — spinning 90's tracks and beyond. Follow upcoming events on [Facebook](https://www.facebook.com/dendenevent/){:target="_blank" rel="noopener"} or [Instagram](https://www.instagram.com/dendenevent){:target="_blank" rel="noopener"}.
 
 projects:
     title: Interests
-    intro: >
-      Here are my interests and related links. 
+    intro: "A few things I'm into outside of work."
     assignments:
       - title: Unsplash
         link: https://unsplash.com/@omurden/
-        tagline: "I love photography, here is shared photos with community for free use."
+        tagline: "Sharing photos with the community for free use."
+        icon: camera
 
-      - title: Instagram - Omurden
+      - title: Instagram
         link: "https://www.instagram.com/omurdenden/"
-        tagline: "Photos from my daily life."
-        
-      - title: Instagram - Dj Denden
+        tagline: "Snapshots from daily life."
+        icon: instagram
+
+      - title: DJ Denden
         link: "https://www.instagram.com/dendenevent/"
-        tagline: "Photos of my Dj life"
+        tagline: "The DJ side of things."
+        icon: instagram
 
-      - title: Tech blog 
+      - title: Tech Blog
         link: "https://medium.com/@omurdenden/"
-        tagline: "Some technical and work life related stuff."
-        
-      - title: Tradingview Charts 
-        link: "https://www.tradingview.com/u/omurden/"
-        tagline: "Sharing some charting ideas about pairs, coins and futures."
-        
-      - title: MT4 Trading Bots
-        link: "https://www.mql5.com/en/users/silverrush/seller"
-        tagline: "I published some trading bots that buy/sell some pairs automatically. Let's download and try."
+        tagline: "Writing about testing, tools, and work life."
+        icon: edit
 
-footer: >
-    Designed with <i class="fas fa-heart"></i> by <a href="http://themes.3rdwavemedia.com" target="_blank" rel="nofollow">Xiaoying Riley</a>
+      - title: TradingView
+        link: "https://www.tradingview.com/u/omurden/"
+        tagline: "Chart ideas for pairs, coins, and futures."
+        icon: trending-up
+
+      - title: Trading Bots
+        link: "https://www.mql5.com/en/users/silverrush/seller"
+        tagline: "Automated MT4 bots for trading pairs."
+        icon: cpu
