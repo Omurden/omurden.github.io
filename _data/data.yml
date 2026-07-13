@@ -29,16 +29,6 @@ projects:
     title: Interests
     intro: "A few things I'm into outside of work."
     assignments:
-      - title: 3Cats Studio
-        link: "https://3cats.studio"
-        tagline: "Independent game studio — premium, story-first games you can actually finish. First title: All Time High."
-        icon: book-open
-
-      - title: AlgoSignals
-        link: "https://algosignals.finance"
-        tagline: "Transparent, algorithmic trading signals — every signal tracked to its outcome. Signals before the move."
-        icon: activity
-
       - title: Unsplash
         link: https://unsplash.com/@omurden/
         tagline: "Sharing photos with the community for free use."
@@ -68,3 +58,13 @@ projects:
         link: "https://www.mql5.com/en/users/silverrush/seller"
         tagline: "Automated MT4 bots for trading pairs."
         icon: cpu
+
+      - title: 3Cats Studio
+        link: "https://3cats.studio"
+        tagline: "Independent game studio — premium, story-first games you can actually finish. First title: All Time High."
+        icon: book-open
+
+      - title: AlgoSignals
+        link: "https://algosignals.finance"
+        tagline: "Transparent, algorithmic trading signals — every signal tracked to its outcome. Signals before the move."
+        icon: activity
