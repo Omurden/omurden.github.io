@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ömürden Cengiz</title>
+<meta name="description" content="Ömürden Cengiz — Amsterdam. Indie game studio founder (3Cats Studio), quant-signals builder (AlgoSignals), QA engineer, DJ, photographer. One index for everything.">
+<meta property="og:title" content="Ömürden Cengiz">
+<meta property="og:description" content="An index of one person's ventures — games, signals, quality, music, photographs, markets. Amsterdam.">
+<meta property="og:type" content="website">
+<script>
+  // Set theme before first paint to avoid flash.
+  (function () {
+    var stored = null;
+    try { stored = localStorage.getItem('theme'); } catch (e) {}
+    var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', theme);
+  })();
+</script>
+<style>
+  /* ============ Tokens ============ */
+  :root {
+    --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, "Times New Roman", serif;
+    --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+
+    /* Cream paper */
+    --paper: #f6f1e7;
+    --paper-raised: #fbf7ef;
+    --ink: #23201b;
+    --ink-soft: #55503f;
+    --ink-faint: #7d7663;
+    --rule: rgba(35, 32, 27, 0.18);
+    --rule-strong: rgba(35, 32, 27, 0.55);
+    --link-underline: rgba(35, 32, 27, 0.35);
+
+    /* Venture accents (plates & dots, not wallpaper) */
+    --acc-games-1: #9faee5;   /* periwinkle */
+    --acc-games-2: #e5a0b4;   /* raspberry  */
+    --acc-games-3: #efd08c;   /* butter     */
+    --acc-signals: #7d9683;   /* soft sage  */
+    --acc-signals-text: #4d6353;
+    --acc-qa: #a3773e;
+    --acc-music: #b06a7c;
+    --acc-photo: #6f7f9d;
+    --acc-markets: #8a8358;
+
+    --focus-ring: #23201b;
+    --shadow-feature: 0 1px 0 rgba(35, 32, 27, 0.06);
+  }
+
+  :root[data-theme="dark"] {
+    /* Warm ink */
+    --paper: #201c18;
+    --paper-raised: #27221d;
+    --ink: #ece4d4;
+    --ink-soft: #c3b9a3;
+    --ink-faint: #998f7a;
+    --rule: rgba(236, 228, 212, 0.18);
+    --rule-strong: rgba(236, 228, 212, 0.55);
+    --link-underline: rgba(236, 228, 212, 0.4);
+
+    --acc-games-1: #a9b7ea;
+    --acc-games-2: #e8aabd;
+    --acc-games-3: #f0d69c;
+    --acc-signals: #93ad99;
+    --acc-signals-text: #aec7b4;
+    --acc-qa: #cfa367;
+    --acc-music: #d093a3;
+    --acc-photo: #9dadc9;
+    --acc-markets: #b5ad7e;
+
+    --focus-ring: #ece4d4;
+    --shadow-feature: 0 1px 0 rgba(0, 0, 0, 0.3);
+  }
+
+  /* ============ Base ============ */
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: clamp(1.0625rem, 1rem + 0.3vw, 1.1875rem);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    transition: background-color 0.35s ease, color 0.35s ease;
+  }
+  ::selection { background: var(--acc-games-1); color: #23201b; }
+
+  a { color: inherit; text-decoration-line: underline; text-decoration-color: var(--link-underline); text-underline-offset: 0.2em; text-decoration-thickness: 1px; transition: text-decoration-color 0.2s ease; }
+  a:hover { text-decoration-color: currentColor; }
+  :focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 3px; border-radius: 2px; }
+
+  .wrap { max-width: 68rem; margin-inline: auto; padding-inline: clamp(1.25rem, 5vw, 3rem); }
+
+  .kicker {
+    font-family: var(--sans);
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+
+  .skip-link {
+    position: absolute; left: 1rem; top: -3rem;
+    background: var(--ink); color: var(--paper);
+    font-family: var(--sans); font-size: 0.875rem;
+    padding: 0.5rem 0.875rem; border-radius: 0 0 4px 4px;
+    z-index: 20; transition: top 0.2s ease;
+  }
+  .skip-link:focus { top: 0; }
+
+  /* ============ Header ============ */
+  header.site {
+    position: sticky; top: 0; z-index: 10;
+    background: var(--paper);
+    background: color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--rule);
+  }
+  .site-bar {
+    display: flex; align-items: baseline; justify-content: space-between;
+    gap: 1rem; padding-block: 0.875rem;
+  }
+  .monogram {
+    font-family: var(--serif); font-weight: 600; font-size: 1.125rem;
+    letter-spacing: 0.02em; text-decoration: none;
+  }
+  .monogram .dot { color: var(--acc-games-2); }
+  nav.toc { display: flex; gap: 1.25rem; align-items: baseline; }
+  nav.toc a {
+    font-family: var(--sans); font-size: 0.75rem; font-weight: 500;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--ink-soft); text-decoration: none;
+  }
+  nav.toc a:hover { color: var(--ink); }
+  @media (max-width: 40rem) { nav.toc .hide-sm { display: none; } }
+
+  .theme-toggle {
+    align-self: center;
+    appearance: none; border: 1px solid var(--rule); background: transparent;
+    color: var(--ink); border-radius: 999px;
+    width: 2.1rem; height: 2.1rem; display: inline-flex; align-items: center; justify-content: center;
+    cursor: pointer; transition: border-color 0.2s ease, transform 0.2s ease;
+  }
+  .theme-toggle:hover { border-color: var(--rule-strong); }
+  .theme-toggle svg { width: 1rem; height: 1rem; }
+  :root[data-theme="light"] .theme-toggle .icon-sun { display: none; }
+  :root[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+
+  /* ============ Hero ============ */
+  .hero { padding-block: clamp(4rem, 10vw, 7.5rem) clamp(3rem, 7vw, 5rem); }
+  .hero .kicker { display: flex; align-items: center; gap: 0.75rem; }
+  .hero .kicker::after { content: ""; flex: 1; height: 1px; background: var(--rule); }
+  .hero h1 {
+    font-weight: 500;
+    font-size: clamp(2.5rem, 1.4rem + 5.2vw, 4.75rem);
+    line-height: 1.06;
+    letter-spacing: -0.015em;
+    margin: 1.25rem 0 0;
+    max-width: 22ch;
+    text-wrap: balance;
+  }
+  .hero h1 em { font-style: italic; font-weight: 400; }
+  .hero .lede {
+    max-width: 44ch;
+    color: var(--ink-soft);
+    font-size: clamp(1.125rem, 1rem + 0.5vw, 1.3125rem);
+    line-height: 1.6;
+    margin: 1.75rem 0 0;
+  }
+  .hero-dots { display: inline-flex; gap: 0.4rem; margin-left: 0.15em; vertical-align: baseline; }
+  .hero-dots i { width: 0.55em; height: 0.55em; border-radius: 50%; display: inline-block; }
+  .hero-dots i:nth-child(1) { background: var(--acc-games-1); }
+  .hero-dots i:nth-child(2) { background: var(--acc-games-2); }
+  .hero-dots i:nth-child(3) { background: var(--acc-games-3); }
+
+  /* ============ Index / entries ============ */
+  .index-head {
+    display: flex; align-items: baseline; justify-content: space-between;
+    border-bottom: 1px solid var(--rule-strong);
+    padding-bottom: 0.75rem;
+  }
+  .index-head h2 { font-size: 1rem; font-weight: 500; font-style: italic; margin: 0; color: var(--ink-soft); }
+
+  .entry {
+    display: grid;
+    grid-template-columns: 4.5rem 1fr;
+    gap: clamp(1rem, 3vw, 2.5rem);
+    padding-block: clamp(1.75rem, 4vw, 2.75rem);
+    border-bottom: 1px solid var(--rule);
+    position: relative;
+  }
+  .entry-num {
+    font-family: var(--sans);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: var(--ink-faint);
+    padding-top: 0.55rem;
+    font-variant-numeric: tabular-nums;
+  }
+  .entry-num::after {
+    content: "";
+    display: block;
+    width: 1.4rem; height: 2px;
+    margin-top: 0.6rem;
+    background: var(--entry-accent, var(--rule-strong));
+  }
+  .entry h3 {
+    margin: 0;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+  }
+  .entry h3 a { text-decoration: none; }
+  .entry h3 a:hover { text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 0.15em; text-decoration-color: var(--entry-accent, currentColor); }
+  .entry .role { display: block; margin-top: 0.45rem; }
+  .entry p { color: var(--ink-soft); max-width: 58ch; margin: 0.9rem 0 0; }
+  .entry-links { margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.4rem 1.5rem; font-family: var(--sans); font-size: 0.8125rem; }
+  .entry-links a { color: var(--ink-soft); text-decoration: none; letter-spacing: 0.02em; }
+  .entry-links a::after { content: "\2197"; margin-left: 0.3em; font-size: 0.85em; color: var(--ink-faint); }
+  .entry-links a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 0.25em; text-decoration-color: var(--entry-accent, var(--link-underline)); }
+
+  /* Featured entries */
+  .entry.feature h3 { font-size: clamp(1.9rem, 1.3rem + 2.6vw, 3rem); }
+  .entry.feature p { font-size: clamp(1.0625rem, 1rem + 0.35vw, 1.1875rem); }
+  .entry.feature .meta-line {
+    margin-top: 1.1rem;
+    font-family: var(--sans); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+  .entry.feature .meta-line strong { color: var(--ink-soft); font-weight: 600; }
+
+  /* Secondary entries */
+  .entry.minor h3 { font-size: clamp(1.35rem, 1.1rem + 1.2vw, 1.75rem); }
+  .entry.minor p { font-size: 1rem; }
+
+  /* Accent assignment */
+  .entry[data-venture="games"]   { --entry-accent: var(--acc-games-2); }
+  .entry[data-venture="signals"] { --entry-accent: var(--acc-signals); }
+  .entry[data-venture="qa"]      { --entry-accent: var(--acc-qa); }
+  .entry[data-venture="music"]   { --entry-accent: var(--acc-music); }
+  .entry[data-venture="photo"]   { --entry-accent: var(--acc-photo); }
+  .entry[data-venture="markets"] { --entry-accent: var(--acc-markets); }
+
+  /* 3Cats: the three dots as this entry's number-plate */
+  .tri-dots { display: inline-flex; gap: 0.35rem; margin-left: 0.6rem; vertical-align: 0.08em; }
+  .tri-dots i { width: 0.5rem; height: 0.5rem; border-radius: 50%; }
+  .tri-dots i:nth-child(1) { background: var(--acc-games-1); }
+  .tri-dots i:nth-child(2) { background: var(--acc-games-2); }
+  .tri-dots i:nth-child(3) { background: var(--acc-games-3); }
+
+  /* AlgoSignals: small sage tick-plate */
+  .sage-tag {
+    display: inline-block; margin-left: 0.6rem; vertical-align: 0.28em;
+    width: 1.6rem; height: 0.5rem;
+  }
+  .sage-tag svg { display: block; width: 100%; height: 100%; }
+
+  .tagline { font-style: italic; color: var(--acc-signals-text); }
+
+  /* Hover lift on entries (subtle) */
+  @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    .entry { transition: background-color 0.25s ease; }
+    .entry:hover { background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--paper-raised) 65%, transparent) 12%, color-mix(in srgb, var(--paper-raised) 65%, transparent) 88%, transparent); }
+  }
+
+  /* ============ About ============ */
+  .about { padding-block: clamp(3.5rem, 8vw, 6rem); }
+  .about-grid { display: grid; grid-template-columns: 4.5rem 1fr; gap: clamp(1rem, 3vw, 2.5rem); }
+  .about blockquote {
+    margin: 0;
+    font-size: clamp(1.25rem, 1.05rem + 1vw, 1.625rem);
+    line-height: 1.5;
+    max-width: 34ch;
+    font-style: italic;
+    font-weight: 400;
+  }
+  .about blockquote p { margin: 0; }
+  .about .signature { margin-top: 1.5rem; font-family: var(--sans); font-size: 0.8125rem; color: var(--ink-faint); letter-spacing: 0.06em; }
+
+  /* ============ Footer ============ */
+  footer.site {
+    border-top: 1px solid var(--rule-strong);
+    padding-block: clamp(2.5rem, 6vw, 4rem);
+  }
+  .foot-grid { display: grid; grid-template-columns: 4.5rem 1fr; gap: clamp(1rem, 3vw, 2.5rem); }
+  .foot-email {
+    font-size: clamp(1.25rem, 1rem + 1.4vw, 1.875rem);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+    border-bottom: 1px solid var(--link-underline);
+    padding-bottom: 0.1em;
+  }
+  .foot-email:hover { border-color: currentColor; }
+  .foot-social { margin-top: 1.75rem; display: flex; flex-wrap: wrap; gap: 0.4rem 1.5rem; font-family: var(--sans); font-size: 0.8125rem; }
+  .foot-social a { color: var(--ink-soft); text-decoration: none; }
+  .foot-social a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 0.25em; }
+  .colophon {
+    margin-top: 2.5rem;
+    display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem 2rem;
+    font-family: var(--sans); font-size: 0.75rem; color: var(--ink-faint); letter-spacing: 0.04em;
+  }
+  .colophon .dots i { width: 0.4rem; height: 0.4rem; border-radius: 50%; display: inline-block; margin-left: 0.3rem; }
+  .colophon .dots i:nth-child(1) { background: var(--acc-games-1); }
+  .colophon .dots i:nth-child(2) { background: var(--acc-games-2); }
+  .colophon .dots i:nth-child(3) { background: var(--acc-games-3); }
+
+  /* ============ Reveal motion ============ */
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+  }
+
+  /* ============ Small screens ============ */
+  @media (max-width: 40rem) {
+    .entry, .about-grid, .foot-grid { grid-template-columns: 1fr; gap: 0.5rem; }
+    .entry-num { padding-top: 0; display: flex; align-items: center; gap: 0.75rem; }
+    .entry-num::after { margin-top: 0; }
+    .entry { padding-block: 2rem; }
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site">
+  <div class="wrap site-bar">
+    <a class="monogram" href="#top" aria-label="Ömürden Cengiz — back to top">Ö. Cengiz<span class="dot">.</span></a>
+    <nav class="toc" aria-label="Page sections">
+      <a href="#index">Index</a>
+      <a class="hide-sm" href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch between light and dark theme">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/>
+      </svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="4"/>
+        <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+  <!-- Hero -->
+  <section class="hero wrap" id="top">
+    <p class="kicker">Ömürden Cengiz · Amsterdam</p>
+    <h1>One life, kept as an <em>index</em><span class="hero-dots" aria-hidden="true"><i></i><i></i><i></i></span></h1>
+    <p class="lede">QA engineer by day, indie game studio founder, quant-signals builder, DJ behind 90's records, photographer. This page is the table of contents — every entry below is real, running, and mine.</p>
+  </section>
+
+  <!-- Index -->
+  <section class="wrap" id="index" aria-label="Index of ventures">
+    <div class="index-head">
+      <p class="kicker" style="margin:0;">Contents</p>
+      <h2>Six entries, two in bold</h2>
+    </div>
+
+    <!-- 01 · 3Cats Studio (featured) -->
+    <article class="entry feature reveal" data-venture="games">
+      <div class="entry-num" aria-hidden="true">01 / Games</div>
+      <div>
+        <h3>
+          <a href="https://3cats.studio" target="_blank" rel="noopener">3Cats Studio</a><span class="tri-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+        </h3>
+        <p>An independent game studio in Amsterdam making premium, story-first, choice-driven interactive fiction — games you can actually finish. One human producer, an AI production crew, and strict editorial control.</p>
+        <p class="meta-line">First title · <strong>All Time High</strong> — a moral-descent crypto thriller · Steam, Aug&nbsp;2026</p>
+        <div class="entry-links">
+          <a href="https://3cats.studio" target="_blank" rel="noopener">3cats.studio</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 02 · AlgoSignals (featured) -->
+    <article class="entry feature reveal" data-venture="signals">
+      <div class="entry-num" aria-hidden="true">02 / Signals</div>
+      <div>
+        <h3>
+          <a href="https://algosignals.finance" target="_blank" rel="noopener">AlgoSignals</a><span class="sage-tag" aria-hidden="true"><svg viewBox="0 0 32 10"><path d="M1 8 L9 8 L13 2 L19 2 L23 8 L31 8" fill="none" stroke="var(--acc-signals)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </h3>
+        <p>A transparent, algorithmic trading-signal service. It scans about 1,000 instruments across US, EU, TR, crypto and forex markets, delivers rules-based setups by email and on X — and tracks every signal to its real outcome, losses published next to wins.</p>
+        <p class="meta-line"><span class="tagline">“Signals before the move.”</span></p>
+        <div class="entry-links">
+          <a href="https://algosignals.finance" target="_blank" rel="noopener">algosignals.finance</a>
+          <a href="https://twitter.com/AlgoSFinance" target="_blank" rel="noopener">@AlgoSFinance</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 03 · QA -->
+    <article class="entry minor reveal" data-venture="qa">
+      <div class="entry-num" aria-hidden="true">03 / Quality</div>
+      <div>
+        <h3>QA Engineering</h3>
+        <p>QA Engineer at Albert Heijn, Amsterdam — I love breaking things so others don't have to. Founder of the QAist Meetup and Robot Framework Turkey communities; I write about testing on Medium.</p>
+        <div class="entry-links">
+          <a href="https://www.ah.nl/" target="_blank" rel="noopener">Albert Heijn</a>
+          <a href="https://www.meetup.com/QAIstMeetup" target="_blank" rel="noopener">QAist Meetup</a>
+          <a href="https://www.meetup.com/Robot-Framework-Turkey" target="_blank" rel="noopener">Robot Framework Turkey</a>
+          <a href="https://medium.com/@omurdenden/" target="_blank" rel="noopener">Medium</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 04 · DJ -->
+    <article class="entry minor reveal" data-venture="music">
+      <div class="entry-num" aria-hidden="true">04 / Music</div>
+      <div>
+        <h3>DJ Dendenevet</h3>
+        <p>Behind the decks with 90's tracks and beyond — the decade that never really ended.</p>
+        <div class="entry-links">
+          <a href="https://www.instagram.com/dendenevent" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.facebook.com/dendenevent/" target="_blank" rel="noopener">Facebook</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 05 · Photography -->
+    <article class="entry minor reveal" data-venture="photo">
+      <div class="entry-num" aria-hidden="true">05 / Photographs</div>
+      <div>
+        <h3>Photography</h3>
+        <p>Free-to-use photographs on Unsplash — take them, they're yours.</p>
+        <div class="entry-links">
+          <a href="https://unsplash.com/@omurden/" target="_blank" rel="noopener">Unsplash</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 06 · Markets -->
+    <article class="entry minor reveal" data-venture="markets">
+      <div class="entry-num" aria-hidden="true">06 / Markets</div>
+      <div>
+        <h3>Trading &amp; Markets</h3>
+        <p>Chart ideas on TradingView and automated MT4 bots on MQL5 — the workshop behind AlgoSignals.</p>
+        <div class="entry-links">
+          <a href="https://www.tradingview.com/u/omurden/" target="_blank" rel="noopener">TradingView</a>
+          <a href="https://www.mql5.com/en/users/silverrush/seller" target="_blank" rel="noopener">MQL5</a>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- About -->
+  <section class="about wrap" id="about">
+    <div class="about-grid">
+      <div class="entry-num" aria-hidden="true">Note</div>
+      <div class="reveal">
+        <blockquote>
+          <p>I live in Amsterdam and I can't do just one thing — so I stopped trying. I test software, build games and trading systems, play records, and take pictures. Everything here connects somewhere; this page is where.</p>
+        </blockquote>
+        <p class="signature">— Ömürden</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="site" id="contact">
+  <div class="wrap foot-grid">
+    <div class="entry-num" aria-hidden="true">Reach</div>
+    <div>
+      <a class="foot-email" href="mailto:omurdenden@gmail.com">omurdenden@gmail.com</a>
+      <div class="foot-social">
+        <a href="https://github.com/omurden" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/omurden" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://twitter.com/omurdenden" target="_blank" rel="noopener">X / Twitter</a>
+        <a href="https://www.instagram.com/omurdenden/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.goodreads.com/user/show/39338388-m-rden-cengiz" target="_blank" rel="noopener">Goodreads</a>
+      </div>
+      <div class="colophon">
+        <span>© <span id="year">2026</span> Ömürden Cengiz · Amsterdam</span>
+        <span>Set in the reader's own serif<span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    // Theme toggle
+    var root = document.documentElement;
+    var btn = document.getElementById('themeToggle');
+    btn.addEventListener('click', function () {
+      var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+    });
+
+    // Follow the OS if the user never chose explicitly
+    var mq = window.matchMedia('(prefers-color-scheme: dark)');
+    var onChange = function (e) {
+      var stored = null;
+      try { stored = localStorage.getItem('theme'); } catch (err) {}
+      if (!stored) root.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+    };
+    if (mq.addEventListener) mq.addEventListener('change', onChange);
+
+    // Reveal-on-scroll (skipped for reduced motion via CSS)
+    var els = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+        });
+      }, { threshold: 0.12 });
+      els.forEach(function (el) { io.observe(el); });
+    } else {
+      els.forEach(function (el) { el.classList.add('in'); });
+    }
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  })();
+</script>
+</body>
+</html>
