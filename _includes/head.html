@@ -7,8 +7,7 @@
   <meta name="description" content="{{ site.description }}">
   <link rel="canonical" href="{{ site.url }}{{ page.url | replace: 'index.html', '' }}">
 
-  <meta name="theme-color" content="#faf8f3" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#26221f" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#faf8f3">
 
   <!-- Open Graph / Twitter -->
   <meta property="og:type" content="profile">
@@ -34,6 +33,18 @@
   get NEW html against CACHED OLD css for up to ten minutes after a deploy — which
   renders the site with no styling at all. Measured on 2026-09-07, not theoretical.
   {%- endcomment -%}
+  <script>
+    // Runs before first paint on purpose. The site opens light for everyone, but a
+    // visitor who has chosen dark must not see a flash of light before the choice is
+    // applied — which is what happens if this waits for the script at the end of body.
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (t) document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css?v={{ site.time | date: '%Y%m%d%H%M%S' }}">
 
   <script type="application/ld+json">

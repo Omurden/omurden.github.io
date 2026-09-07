@@ -18,13 +18,14 @@
 
   <script>
   (function () {
+    // The stored theme is already applied in <head>; this only handles the toggle.
     var root = document.documentElement, btn = document.getElementById('themeBtn');
-    var saved = null; try { saved = localStorage.getItem('theme'); } catch (e) {}
-    if (saved) root.setAttribute('data-theme', saved);
     if (!btn) return;
     btn.addEventListener('click', function () {
       var cur = root.getAttribute('data-theme');
-      if (!cur) cur = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      // The page always renders light until data-theme says otherwise, so the
+      // untouched state is 'light' regardless of what the OS prefers.
+      if (!cur) cur = 'light';
       var next = cur === 'dark' ? 'light' : 'dark';
       root.setAttribute('data-theme', next);
       try { localStorage.setItem('theme', next); } catch (e) {}
