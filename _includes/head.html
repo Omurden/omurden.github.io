@@ -28,7 +28,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=Karla:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css">
+  {%- comment -%}
+  The stylesheet URL carries the build time. HTML and CSS are both served with
+  max-age=600 and expire independently, so without this a returning visitor can
+  get NEW html against CACHED OLD css for up to ten minutes after a deploy — which
+  renders the site with no styling at all. Measured on 2026-09-07, not theoretical.
+  {%- endcomment -%}
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css?v={{ site.time | date: '%Y%m%d%H%M%S' }}">
 
   <script type="application/ld+json">
   {
