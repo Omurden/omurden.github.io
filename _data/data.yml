@@ -1,70 +1,101 @@
-sidebar:
-    about: False
-    education: False
+# Content of the site. Everything a human would want to change lives here;
+# the templates in _includes/ only lay it out.
 
-    # Profile information
-    name: Ömürden Cengiz
-    tagline: QA Engineer & DJ
-    avatar: profile.png
+profile:
+  name: Ömürden Cengiz
+  initials: ÖC
+  location: Amsterdam
+  headline: Four rooms, and I am in all of them.
+  intro: >
+    I test software for a living — deciding whether it is good enough to ship. That habit spilled
+    into **the nights I promote**, **the games I produce** and **the signals I publish**, so this
+    page gives each of the four its own room instead of pretending one of them is the whole story.
+  email: omurdenden@gmail.com
 
-    # Contact / social links
-    email: omurdenden@gmail.com
-    phone:
-    website: omurden.com
-    linkedin: omurden
-    github: omurden
-    twitter: '@omurdenden'
-    goodreads: 39338388-m-rden-cengiz
+# The four primary areas, in the order the Human ruled them (2026-09-07):
+# QA · Music · Games · Finance. `key` picks the room's colour in _sass/_rooms.scss.
+rooms:
+  - id: quality
+    key: q
+    num: "01"
+    kind: Quality
+    title: Quality Engineering
+    role: QA Engineer · Albert Heijn, Amsterdam
+    body:
+      - Testing web, mobile and API systems — manual where judgement beats a script, automated
+        everywhere else. Selenium, Robot Framework, RestAssured, XCUITest, Espresso; the CI that
+        runs them and the database underneath.
+      - I founded **QAist**, Amsterdam's QA meetup, and **Robot Framework Turkey**.
+    links:
+      - { label: QAist Meetup, url: "https://www.meetup.com/QAIstMeetup" }
+      - { label: Robot Framework Turkey, url: "https://www.meetup.com/Robot-Framework-Turkey" }
+      - { label: Writing on Medium, url: "https://medium.com/@omurdenden/" }
+      - { label: CV on LinkedIn, url: "https://linkedin.com/in/omurden" }
 
-career-profile:
-    title: About Me
-    summary: |
-      QA Engineer at [Albert Heijn](https://www.ah.nl/){:target="_blank" rel="noopener"} based in Amsterdam — I love breaking things so others don't have to. I founded the [QAist Meetup](https://www.meetup.com/QAIstMeetup){:target="_blank" rel="noopener"} and [Robot Framework Turkey](https://www.meetup.com/Robot-Framework-Turkey){:target="_blank" rel="noopener"} communities to bring testers together.
+  - id: music
+    key: m
+    num: "02"
+    kind: Music
+    title: 3Cats Events &amp; DJ Denden
+    role: Event promotion · Behind the decks
+    body:
+      - I put the nights on and I play them. **3Cats Events** is the promotion side — venues,
+        line-ups, and the unglamorous half that decides whether a room actually fills.
+      - "**Dendenevet** is the booth: 90's records and everything the decade dragged along behind it."
+    links:
+      - { label: Dates on Instagram, url: "https://www.instagram.com/dendenevent/" }
+      - { label: Events on Facebook, url: "https://www.facebook.com/dendenevent/" }
 
-      When I'm not testing, I'm DJ-ing as [Dendenevet](https://www.instagram.com/dendenevent){:target="_blank" rel="noopener"} — spinning 90's tracks and beyond. Follow upcoming events on [Facebook](https://www.facebook.com/dendenevent/){:target="_blank" rel="noopener"} or [Instagram](https://www.instagram.com/dendenevent){:target="_blank" rel="noopener"}.
+  - id: games
+    key: g
+    num: "03"
+    kind: Games
+    title: 3Cats Studio
+    href: "https://3cats.studio"
+    role: Founder · Independent game studio, Amsterdam
+    body:
+      - Premium, story-first, choice-driven fiction — **games you can actually finish**. One human
+        producer holding editorial control over an AI production crew, which is a working method
+        rather than a slogan.
+    pill_key: "First title:"
+    pill: All Time High — a moral-descent crypto thriller. On Steam.
+    links:
+      - { label: 3cats.studio, url: "https://3cats.studio" }
 
-      I also build things: [3Cats Studio](https://3cats.studio){:target="_blank" rel="noopener"}, an independent game studio in Amsterdam making premium, story-first, choice-driven fiction — and [AlgoSignals](https://algosignals.finance){:target="_blank" rel="noopener"}, a transparent, algorithmic trading-signal service that tracks every signal to its real outcome.
+  - id: finance
+    key: f
+    num: "04"
+    kind: Finance
+    title: AlgoSignals
+    href: "https://algosignals.finance"
+    role: Builder · Algorithmic trading signals
+    body:
+      - Rules-based setups across US, EU, Turkish, crypto and forex markets, delivered by email and
+        on X. **Every signal is tracked to its real outcome** — the losses are published next to the
+        wins, which is the entire point and the reason it was worth building.
+    pill_key: "Underneath it:"
+    pill: chart ideas on TradingView and automated MT4 bots on MQL5 — the workshop the product came out of.
+    links:
+      - { label: algosignals.finance, url: "https://algosignals.finance" }
+      - { label: TradingView ideas, url: "https://www.tradingview.com/u/omurden/" }
+      - { label: MQL5 bots, url: "https://www.mql5.com/en/users/silverrush/seller" }
 
-projects:
-    title: Interests
-    intro: "A few things I'm into outside of work."
-    assignments:
-      - title: Unsplash
-        link: https://unsplash.com/@omurden/
-        tagline: "Sharing photos with the community for free use."
-        icon: camera
+# Deliberately a second, smaller layer — these are not the four (CLAUDE.md router, 2026-09-07).
+shelf:
+  title: Off to the side
+  items:
+    - title: Photographs
+      note: Free to use, on Unsplash. Take them.
+      url: "https://unsplash.com/@omurden/"
+    - title: Instagram
+      note: Daily life, unsorted.
+      url: "https://www.instagram.com/omurdenden/"
+    - title: Reading
+      note: What is currently on the pile.
+      url: "https://www.goodreads.com/user/show/39338388-m-rden-cengiz"
 
-      - title: Instagram
-        link: "https://www.instagram.com/omurdenden/"
-        tagline: "Snapshots from daily life."
-        icon: instagram
-
-      - title: DJ Denden
-        link: "https://www.instagram.com/dendenevent/"
-        tagline: "The DJ side of things."
-        icon: instagram
-
-      - title: Tech Blog
-        link: "https://medium.com/@omurdenden/"
-        tagline: "Writing about testing, tools, and work life."
-        icon: edit
-
-      - title: TradingView
-        link: "https://www.tradingview.com/u/omurden/"
-        tagline: "Chart ideas for pairs, coins, and futures."
-        icon: trending-up
-
-      - title: Trading Bots
-        link: "https://www.mql5.com/en/users/silverrush/seller"
-        tagline: "Automated MT4 bots for trading pairs."
-        icon: cpu
-
-      - title: 3Cats Studio
-        link: "https://3cats.studio"
-        tagline: "Independent game studio — premium, story-first games you can actually finish. First title: All Time High."
-        icon: book-open
-
-      - title: AlgoSignals
-        link: "https://algosignals.finance"
-        tagline: "Transparent, algorithmic trading signals — every signal tracked to its outcome. Signals before the move."
-        icon: activity
+social:
+  - { label: LinkedIn, url: "https://linkedin.com/in/omurden" }
+  - { label: GitHub, url: "https://github.com/omurden" }
+  - { label: X, url: "https://x.com/omurdenden" }
+  - { label: Medium, url: "https://medium.com/@omurdenden/" }

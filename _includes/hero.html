@@ -1,0 +1,13 @@
+{% assign p = site.data.data.profile %}
+<section class="hero">
+  <p class="eyebrow">
+    <span class="pips" aria-hidden="true">
+      {% for room in site.data.data.rooms %}<i class="{{ room.key }}"></i>{% endfor %}
+    </span>
+    {{ p.name }} — {{ p.location }}
+  </p>
+
+  <h1>{{ p.headline }}</h1>
+
+  <div class="lede">{{ p.intro | markdownify }}</div>
+</section>

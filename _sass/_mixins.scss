@@ -1,9 +1,0 @@
-// Minimal — no legacy vendor prefixes needed
-// Only keep truly useful mixins
-
-@mixin truncate($max-width: 250px) {
-  max-width: $max-width;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
