@@ -5,11 +5,11 @@ profile:
   name: Ömürden Cengiz
   initials: ÖC
   location: Amsterdam
-  headline: Four rooms, and I am in all of them.
+  headline: I break software so that <em>other people do not have to</em>.
   intro: >
-    I test software for a living — deciding whether it is good enough to ship. That habit spilled
-    into **the nights I promote**, **the games I produce** and **the signals I publish**, so this
-    page gives each of the four its own room instead of pretending one of them is the whole story.
+    I test software for a living and I have never managed to stop there. Four things have my hands
+    in them — **quality engineering**, **events and music**, **a game studio**, and **a
+    trading-signal service**. This page is the honest order of them.
   email: omurdenden@gmail.com
 
 # The four primary areas, in the order the Human ruled them (2026-09-07):
@@ -36,13 +36,19 @@ rooms:
     key: m
     num: "02"
     kind: Music
-    title: 3Cats Events &amp; DJ Denden
-    role: Event promotion · Behind the decks
+    title: DJ Denden
+    href: "https://djdenden.com"
+    role: Turkish Pop &amp; 90s nights · Event promotion
     body:
-      - I put the nights on and I play them. **3Cats Events** is the promotion side — venues,
-        line-ups, and the unglamorous half that decides whether a room actually fills.
-      - "**Dendenevet** is the booth: 90's records and everything the decade dragged along behind it."
+      - I put the nights on and I play them. **Turkish Pop and 90s nights across the Netherlands** —
+        weddings, corporate events and private parties, from Amsterdam and Rotterdam to Utrecht and
+        Eindhoven, and further into Europe when the night is worth the drive.
+      - "**3Cats Events** is the other half: venues, line-ups and the unglamorous work that decides
+        whether a room actually fills."
+    pill_key: "Bookings:"
+    pill: djdenden.com — the full set, in English, Dutch and Turkish.
     links:
+      - { label: djdenden.com, url: "https://djdenden.com" }
       - { label: Dates on Instagram, url: "https://www.instagram.com/dendenevent/" }
       - { label: Events on Facebook, url: "https://www.facebook.com/dendenevent/" }
 
