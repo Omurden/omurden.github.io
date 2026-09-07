@@ -1,3 +1,12 @@
-<footer class="footer">
-  <p>&copy; {{ site.time | date: '%Y' }} {{ site.data.data.sidebar.name }}</p>
+{% assign p = site.data.data.profile %}
+<footer class="colophon">
+  <div class="row">
+    <a class="mail" href="mailto:{{ p.email }}">{{ p.email }}</a>
+    <nav class="social" aria-label="Elsewhere">
+      {% for s in site.data.data.social %}
+      <a href="{{ s.url }}" target="_blank" rel="noopener">{{ s.label }}</a>
+      {% endfor %}
+    </nav>
+  </div>
+  <p class="fine">&copy; {{ site.time | date: '%Y' }} {{ p.name }} &mdash; {{ p.location }}. Four things, in order.</p>
 </footer>

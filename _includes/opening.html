@@ -1,0 +1,6 @@
+{% assign p = site.data.data.profile %}
+<section class="opening">
+  <p class="dateline">{{ p.location }}, the Netherlands</p>
+  <h1>{{ p.headline }}</h1>
+  <div class="lede">{{ p.intro | markdownify }}</div>
+</section>

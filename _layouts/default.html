@@ -3,20 +3,33 @@
 <!DOCTYPE html>
 <html lang="en">
 {% include head.html %}
-
 <body>
-  <div class="wrapper">
-    {% include sidebar.html %}
+  <a class="skip-link" href="#top">Skip to content</a>
 
-    <main class="main-wrapper">
-      {{ content }}
-    </main>
+  {% include masthead.html %}
 
+  <main class="wrap" id="top">
+    {{ content }}
+  </main>
+
+  <div class="wrap">
     {% include footer.html %}
   </div>
 
-  {% include scripts.html %}
+  <script>
+  (function () {
+    var root = document.documentElement, btn = document.getElementById('themeBtn');
+    var saved = null; try { saved = localStorage.getItem('theme'); } catch (e) {}
+    if (saved) root.setAttribute('data-theme', saved);
+    if (!btn) return;
+    btn.addEventListener('click', function () {
+      var cur = root.getAttribute('data-theme');
+      if (!cur) cur = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      var next = cur === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+    });
+  })();
+  </script>
 </body>
-
 </html>
-

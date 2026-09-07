@@ -1,0 +1,14 @@
+{% assign shelf = site.data.data.shelf %}
+<section class="aside">
+  <div class="section-rule">
+    <span class="label">{{ shelf.title }}</span>
+  </div>
+  <div class="quiet">
+    {% for item in shelf.items %}
+    <a href="{{ item.url }}" target="_blank" rel="noopener">
+      <span class="t">{{ item.title }}</span>
+      <span class="d">{{ item.note }}</span>
+    </a>
+    {% endfor %}
+  </div>
+</section>
